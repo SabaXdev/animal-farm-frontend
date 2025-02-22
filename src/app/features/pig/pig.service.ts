@@ -3,11 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { Pig } from './pig.model';
 import { Animal } from '../animals/animal.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class PigService {
-  private baseUrl = 'http://localhost:3000/api';
-
+  // private baseUrl = 'http://localhost:3000/api';
+  private baseUrl = environment.apiUrl + '/api';
+  
   constructor(private http: HttpClient) {}
 
   getPig(): Observable<Pig | null> {

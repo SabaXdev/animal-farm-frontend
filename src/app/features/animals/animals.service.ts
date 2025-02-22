@@ -2,12 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Animal } from './animal.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimalsService {
-  private baseUrl = 'http://localhost:3000/api/animals';
+  // private baseUrl = 'http://localhost:3000/api/animals';
+  private baseUrl = environment.apiUrl + '/api/animals';
 
   constructor(private http: HttpClient) { }
 
