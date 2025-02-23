@@ -39,10 +39,10 @@ export const pigReducer = createReducer(
             ...state.pig,
             imageUrl:
               newStatus === 'happy'
-                ? 'http://localhost:4200/ღორი_გახარებული.jpg'
+                ? 'assets/images/ღორი_გახარებული.jpg'
                 : newStatus === 'putin'
-                ? 'http://localhost:4200/პუტინი.png'
-                : 'http://localhost:4200/ღორი_ჩვეულებრივი.jpg',
+                ? 'assets/images/პუტინი.png'
+                : 'assets/images/ღორი_ჩვეულებრივი.jpg',
           }
         : null,
     };
