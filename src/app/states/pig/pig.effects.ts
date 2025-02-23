@@ -34,7 +34,6 @@ export class PigEffects {
       ofType(loadPigStatus),
       mergeMap(() =>
         this.pigService.getPigStatus().pipe(
-          tap(response => console.log("🐷 Pig Status from API:", response.state)), // 🔍 Debugging log
           map(response => loadPigStatusSuccess({ status: response.state  as 'neutral' | 'happy' | 'putin'})),
           catchError(error => {
             console.error("❌ Error loading Pig Status:", error.message); // Log errors
